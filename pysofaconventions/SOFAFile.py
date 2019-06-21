@@ -63,6 +63,10 @@ class SOFAFile(object):
 
     def __init__(self,path,mode):
         self.ncfile = SOFANetCDFFile(path,mode)
+        if mode == 'w' or mode == 'ws':
+            pass
+        else:
+            self.isValid()
 
     def close(self):
         self.ncfile.close()
