@@ -66,6 +66,34 @@ class SOFAFile(object):
         if mode == 'w' or mode == 'ws':
             pass
         else:
+            convention = self.getGlobalAttributeValue('SOFAConventions')
+            if convention == '':
+                from .SOFAConventions import SOFAAmbisonicsDRIR as subclass
+                self.__class__ = subclass
+            elif convention == '':
+                from .SOFAConventions import SOFAGeneralFIR as subclass
+                self.__class__ = subclass
+            elif convention == '':
+                from .SOFAConventions import SOFAGeneralFIRE as subclass
+                self.__class__ = subclass
+            elif convention == '':
+                from .SOFAConventions import SOFAGeneralTF as subclass
+                self.__class__ = subclass
+            elif convention == '':
+                from .SOFAConventions import SOFAMultiSpeakerBRIR as subclass
+                self.__class__ = subclass
+            elif convention == '':
+                from .SOFAConventions import SOFASimpleFreeFieldHRIR as subclass
+                self.__class__ = subclass
+            elif convention == '':
+                from .SOFAConventions import SOFASimpleFreeFieldSOS as subclass
+                self.__class__ = subclass
+            elif convention == '':
+                from .SOFAConventions import SOFASimpleHeadphoneIR as subclass
+                self.__class__ = subclass
+            elif convention == '':
+                from .SOFAConventions import SOFASingleRoomDRIR as subclass
+                self.__class__ = subclass
             self.isValid()
 
     def close(self):
