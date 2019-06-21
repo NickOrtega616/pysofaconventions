@@ -67,31 +67,31 @@ class SOFAFile(object):
             pass
         else:
             convention = self.getGlobalAttributeValue('SOFAConventions')
-            if convention == '':
+            if convention == 'AmbisonicsDRIR':
                 from .SOFAConventions import SOFAAmbisonicsDRIR as subclass
                 self.__class__ = subclass
-            elif convention == '':
+            elif convention == 'GeneralFIR':
                 from .SOFAConventions import SOFAGeneralFIR as subclass
                 self.__class__ = subclass
-            elif convention == '':
+            elif convention == 'GeneralFIRE':
                 from .SOFAConventions import SOFAGeneralFIRE as subclass
                 self.__class__ = subclass
-            elif convention == '':
+            elif convention == 'GeneralTF':
                 from .SOFAConventions import SOFAGeneralTF as subclass
                 self.__class__ = subclass
-            elif convention == '':
+            elif convention == 'MultiSpeakerBRIR':
                 from .SOFAConventions import SOFAMultiSpeakerBRIR as subclass
                 self.__class__ = subclass
-            elif convention == '':
+            elif convention == 'SimpleFreeFieldHRIR':
                 from .SOFAConventions import SOFASimpleFreeFieldHRIR as subclass
                 self.__class__ = subclass
-            elif convention == '':
+            elif convention == 'SimpleFreeFieldSOS':
                 from .SOFAConventions import SOFASimpleFreeFieldSOS as subclass
                 self.__class__ = subclass
-            elif convention == '':
+            elif convention == 'SimpleHeadphoneIR':
                 from .SOFAConventions import SOFASimpleHeadphoneIR as subclass
                 self.__class__ = subclass
-            elif convention == '':
+            elif convention == 'SingleRoomDRIR':
                 from .SOFAConventions import SOFASingleRoomDRIR as subclass
                 self.__class__ = subclass
             self.isValid()
